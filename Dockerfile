@@ -26,6 +26,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /pushGateway/RocketChatMobilePushGateway /usr/local/bin/
+COPY ./mycerts /certs
 
 RUN mkdir -p /etc/RocketChatMobilePushGateway/credentials/google \
  && mkdir -p /etc/RocketChatMobilePushGateway/credentials/apple \
