@@ -59,11 +59,21 @@ This project has dependencies, included via submodules, so you have to clone rec
 ### Docker build
 - run `docker build .`
 - place the credentials in the servers "credentials" directory (see "manual build instructions" for details)
-- mount your credentials folder into the container with -v /yourCertsFolder:/certs and run image
-    - yourCertsFolder/google/serverKey.txt
-    - yourCertsFolder/apple/cred.pem (see https://github.com/joshuakuai/PusherCpp)
+- mount your credentials folder into the container with -v /mycerts:/certs and run image
+    - mycerts/google/serverKey.txt
+    - mycerts/apple/cred.pem (see https://github.com/joshuakuai/PusherCpp)
 
-  e.g. `docker run -t gateway -v /yourCertsFolder:/certs -p 0.0.0.0:80:11000 <image id>`
+  e.g. `docker run -p 0.0.0.0:80:11000 <image id>`
   
 ### Kubernetes
 adapt the exmaple files under ./k8s for your needs
+
+### Fork from 
+[RocketChatMobilePushGateway](https://github.com/arminfelder/RocketChatMobilePushGateway)
+
+### NOTE
+1. view log:
+   - `docker logs <CONTAINER_ID>` or `tail -f /var/lib/docker/containers/<image id>/<image id>.logs`
+2. with `libs/cpp-base64` and `libs/cpp-jwt` folder. Must clone/download from [cpp-base64](https://github.com/ReneNyffenegger/cpp-base64/tree/6420804f7ba10e8c3049c6e3b59ec88c88d808a6) and [cpp-jwt](https://github.com/arun11299/cpp-jwt/tree/1cbc5eb5a54c45b79399483c4357e7e47100f474).
+    - **Becareful with exactly commit**
+    
