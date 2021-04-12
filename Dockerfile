@@ -37,5 +37,5 @@ EXPOSE 11000
 
 USER 1001
 
-CMD ["rocketChatMobilePushGateway","--logtostderr=1"]
+CMD ["rocketChatMobilePushGateway","--logtostderr=0"]
 

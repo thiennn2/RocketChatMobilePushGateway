@@ -69,7 +69,7 @@ void GooglePushHandler::onEOM() noexcept {
 }
 
 void GooglePushHandler::requestComplete() noexcept {
-
+	delete this;
 }
 
 void GooglePushHandler::onError(ProxygenError err) noexcept {

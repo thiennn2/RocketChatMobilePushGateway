@@ -71,7 +71,7 @@ void ApplePushHandler::onEOM() noexcept {
 }
 
 void ApplePushHandler::requestComplete() noexcept {
-
+	delete this;
 }
 
 void ApplePushHandler::onError(ProxygenError err) noexcept {

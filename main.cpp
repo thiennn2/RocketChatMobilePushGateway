@@ -48,10 +48,11 @@ DEFINE_int32(threads, 0, "Number of threads to listen on. Numbers <= 0 "
 
 int main(int argc, char* argv[]) {
 
-    FLAGS_logtostderr = true;
+    FLAGS_logtostderr = false;
     gflags::ParseCommandLineFlags(&argc, &argv, true);
 
     google::InitGoogleLogging(argv[0]);
+    // google::SetCommandLineOption("GLOG_minloglevel", "2");
     google::InstallFailureSignalHandler();
 
     Settings::init();
