@@ -82,6 +82,9 @@ ApplePushModel::ApplePushModel(const std::string &pJson) {
 
 
             }
+            if (options.isMember("notId")) {
+                mNotId = options["notId"].asString();
+            }
             if (options.isMember("title")) {
                 mTitle = options["title"].asString();
             }
@@ -141,6 +144,7 @@ bool ApplePushModel::sendMessage() {
 
     alert["body"] = mText;
     alert["title"] = mTitle;
+    alert["notId"] = mNotId;
 
     Json::Value aps;
     aps["category"] = "MESSAGE";

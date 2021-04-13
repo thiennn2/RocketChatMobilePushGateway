@@ -77,6 +77,9 @@ GooglePushModel::GooglePushModel(const std::string &pJson) {
 
 
             }
+            if (options.isMember("notId")) {
+                mNotId = options["notId"].asString();
+            }
             if (options.isMember("title")) {
                 mTitle = options["title"].asString();
             }
@@ -177,6 +180,7 @@ bool GooglePushModel::sendMessage() {
 
     Json::Value obj;
     Json::Value msg;
+    msg["notId"] = mNotId;
     msg["title"] = mTitle;
     msg["body"] = mText;
     msg["message"] = mText;

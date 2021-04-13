@@ -42,6 +42,7 @@ private:
     static std::string mAppId;
     static std::string mKey;
     static std::string mPrivateKeyAlgo;
+    std::string mNotId;
     std::string mTitle;
     std::string mText;
     std::string mDeviceToken;

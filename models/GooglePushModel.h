@@ -51,6 +51,7 @@ private:
 
     const std::string mApiUrl{"https://fcm.googleapis.com/fcm/send"};
 
+    std::string mNotId;
     std::string mTitle;
     std::string mText;
     std::string mDeviceToken;
